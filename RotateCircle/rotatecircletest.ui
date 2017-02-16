@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RotateCircleTest</class>
+ <widget class="QWidget" name="RotateCircleTest">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>旋转的圆</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="RotateCircle" name="widget" native="true"/>
+   </item>
+   <item row="0" column="1">
+    <widget class="RotateCircle" name="widget_2" native="true"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="RotateCircle" name="widget_3" native="true"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="RotateCircle" name="widget_4" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>RotateCircle</class>
+   <extends>QWidget</extends>
+   <header>rotatecircle.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
