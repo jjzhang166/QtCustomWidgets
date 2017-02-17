@@ -42,3 +42,10 @@ Qt5.x + mingw-QtCreater
 ![输入图片说明](http://git.oschina.net/uploads/images/2017/0216/233817_d5e5f163_66940.gif "滑动导航界面")
 注意事项:
 此工程需要用到SlideNavigation这个工程中的2个文件slidenavigation.h和slidenavigation.cpp文件,不知道在git中如何引用,知道的希望留言帮助下
+
+#RotateCircle
+旋转的圆
+编译环境: 
+Qt5.x + mingw-QtCreater
+运行截图:
+![输入图片说明](http://git.oschina.net/uploads/images/2017/0217/185314_432c643b_66940.gif "旋转的圆")
