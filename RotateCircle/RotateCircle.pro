@@ -22,6 +22,7 @@ HEADERS  += rotatecircle.h \
 FORMS += \
     rotatecircletest.ui
 
+CONFIG += release
 MOC_DIR = temp/moc
 RCC_DIR = temp/rcc
 UI_DIR = temp/ui
