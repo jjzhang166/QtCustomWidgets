@@ -1,33 +1,44 @@
 #QtCustomWidgets
+è¯´æ˜æ ¼å¼:
+#é¡¹ç›®åç§°
+#ç¼–è¯‘ç¯å¢ƒ
+#è¿è¡Œæˆªå›¾
+#æ³¨æ„äº‹é¡¹
 
 #ColorProgressBar
-¶à²Ê½ø¶ÈÌõ
-ÑİÊ¾:
-![ÊäÈëÍ¼Æ¬ËµÃ÷](http://git.oschina.net/uploads/images/2017/0210/152639_3e0c00d8_66940.gif "¶à²Ê½ø¶ÈÌõÑİÊ¾")
-
-±àÒë»·¾³:
+å¤šå½©è¿›åº¦æ¡
+ç¼–è¯‘ç¯å¢ƒ: 
 Qt5.x + mingw-QtCreater
-progressbarcolorÎªÔ­°æ´úÂë
+è¿è¡Œæˆªå›¾:
+![è¾“å…¥å›¾ç‰‡è¯´æ˜](http://git.oschina.net/uploads/images/2017/0210/152639_3e0c00d8_66940.gif "å¤šå½©è¿›åº¦æ¡æ¼”ç¤º")
+progressbarcolorä¸ºåŸç‰ˆä»£ç 
 
 #DynamicProgressBar
-¶àÌ¬½ø¶ÈÌõ,
-±àÒë»·¾³,Qt5.x + mingw
-ÔËĞĞÕ¹Ê¾:
-![ÊäÈëÍ¼Æ¬ËµÃ÷](http://git.oschina.net/uploads/images/2017/0211/165248_e8a246ca_66940.gif "¶àÌ¬½ø¶ÈÌõ")
+å¤šæ€è¿›åº¦æ¡
+ç¼–è¯‘ç¯å¢ƒ: 
+Qt5.x + mingw-QtCreater
+è¿è¡Œæˆªå›¾:
+![è¾“å…¥å›¾ç‰‡è¯´æ˜](http://git.oschina.net/uploads/images/2017/0211/165248_e8a246ca_66940.gif "å¤šæ€è¿›åº¦æ¡")
 
 #RoundProgressBar
-±àÒë»·¾³:
-Qt5.x + Mingw
-ÔËĞĞÕ¹Ê¾:
-
-![ÊäÈëÍ¼Æ¬ËµÃ÷](http://git.oschina.net/uploads/images/2017/0209/152434_e4d074cb_66940.gif "Ô²ĞÎ½ø¶ÈÌõÔËĞĞÕ¹Ê¾")
+ç¼–è¯‘ç¯å¢ƒ: 
+Qt5.x + mingw-QtCreater
+è¿è¡Œæˆªå›¾:
+![è¾“å…¥å›¾ç‰‡è¯´æ˜](http://git.oschina.net/uploads/images/2017/0209/152434_e4d074cb_66940.gif "åœ†å½¢è¿›åº¦æ¡è¿è¡Œå±•ç¤º")
 
 #SlideNavigation
+æ»‘åŠ¨å¯¼èˆªæ¡
+ç¼–è¯‘ç¯å¢ƒ: 
+Qt5.x + mingw-QtCreater
+è¿è¡Œæˆªå›¾:
+![è¾“å…¥å›¾ç‰‡è¯´æ˜](http://git.oschina.net/uploads/images/2017/0217/120248_35bf6ddc_66940.gif "æ»‘åŠ¨å¯¼èˆªæ¡")
 
 
 #SlideNavigationApp
-»¬¶¯µ¼º½½çÃæ,
-±àÒë»·¾³:
-Qt5.x + mingw, ´Ë¹¤³ÌĞèÒªÓÃµ½SlideNavigationÕâ¸ö¹¤³ÌÖĞµÄ2¸öÎÄ¼şslidenavigation.hºÍslidenavigation.cppÎÄ¼ş,²»ÖªµÀÔÚgitÖĞÈçºÎÒıÓÃ,ÖªµÀµÄÏ£ÍûÁôÑÔ°ïÖúÏÂ
-ÔËĞĞ½ØÍ¼:
-![ÊäÈëÍ¼Æ¬ËµÃ÷](http://git.oschina.net/uploads/images/2017/0216/233817_d5e5f163_66940.gif "»¬¶¯µ¼º½½çÃæ")
+æ»‘åŠ¨å¯¼èˆªç•Œé¢
+ç¼–è¯‘ç¯å¢ƒ: 
+Qt5.x + mingw-QtCreater
+è¿è¡Œæˆªå›¾:
+![è¾“å…¥å›¾ç‰‡è¯´æ˜](http://git.oschina.net/uploads/images/2017/0216/233817_d5e5f163_66940.gif "æ»‘åŠ¨å¯¼èˆªç•Œé¢")
+æ³¨æ„äº‹é¡¹:
+æ­¤å·¥ç¨‹éœ€è¦ç”¨åˆ°SlideNavigationè¿™ä¸ªå·¥ç¨‹ä¸­çš„2ä¸ªæ–‡ä»¶slidenavigation.hå’Œslidenavigation.cppæ–‡ä»¶,ä¸çŸ¥é“åœ¨gitä¸­å¦‚ä½•å¼•ç”¨,çŸ¥é“çš„å¸Œæœ›ç•™è¨€å¸®åŠ©ä¸‹
