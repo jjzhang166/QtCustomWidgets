@@ -1,1 +1,33 @@
 #QtCustomWidgets
+
+#ColorProgressBar
+多彩进度条
+演示:
+![输入图片说明](http://git.oschina.net/uploads/images/2017/0210/152639_3e0c00d8_66940.gif "多彩进度条演示")
+
+编译环境:
+Qt5.x + mingw-QtCreater
+progressbarcolor为原版代码
+
+#DynamicProgressBar
+多态进度条,
+编译环境,Qt5.x + mingw
+运行展示:
+![输入图片说明](http://git.oschina.net/uploads/images/2017/0211/165248_e8a246ca_66940.gif "多态进度条")
+
+#RoundProgressBar
+编译环境:
+Qt5.x + Mingw
+运行展示:
+
+![输入图片说明](http://git.oschina.net/uploads/images/2017/0209/152434_e4d074cb_66940.gif "圆形进度条运行展示")
+
+#SlideNavigation
+
+
+#SlideNavigationApp
+滑动导航界面,
+编译环境:
+Qt5.x + mingw, 此工程需要用到SlideNavigation这个工程中的2个文件slidenavigation.h和slidenavigation.cpp文件,不知道在git中如何引用,知道的希望留言帮助下
+运行截图:
+![输入图片说明](http://git.oschina.net/uploads/images/2017/0216/233817_d5e5f163_66940.gif "滑动导航界面")

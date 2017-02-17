@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmProgressBarColor</class>
+ <widget class="QWidget" name="frmProgressBarColor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="ProgressBarColor" name="widget1">
+     <property name="value">
+      <double>30.000000000000000</double>
+     </property>
+     <property name="radius">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="textColor">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="barBgColor">
+      <color>
+       <red>70</red>
+       <green>70</green>
+       <blue>70</blue>
+      </color>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSlider" name="horizontalSlider1">
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>30</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="ProgressBarColor" name="widget2">
+     <property name="maxValue">
+      <double>200.000000000000000</double>
+     </property>
+     <property name="value">
+      <double>50.000000000000000</double>
+     </property>
+     <property name="precision">
+      <number>1</number>
+     </property>
+     <property name="step">
+      <double>5.000000000000000</double>
+     </property>
+     <property name="barColor">
+      <color>
+       <red>255</red>
+       <green>107</green>
+       <blue>107</blue>
+      </color>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSlider" name="horizontalSlider2">
+     <property name="maximum">
+      <number>200</number>
+     </property>
+     <property name="value">
+      <number>50</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="ProgressBarColor" name="widget3">
+     <property name="minValue">
+      <double>-100.000000000000000</double>
+     </property>
+     <property name="maxValue">
+      <double>100.000000000000000</double>
+     </property>
+     <property name="step">
+      <double>7.000000000000000</double>
+     </property>
+     <property name="radius">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="textColor">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="barBgColor">
+      <color>
+       <red>80</red>
+       <green>80</green>
+       <blue>80</blue>
+      </color>
+     </property>
+     <property name="barColor">
+      <color>
+       <red>24</red>
+       <green>198</green>
+       <blue>155</blue>
+      </color>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSlider" name="horizontalSlider3">
+     <property name="minimum">
+      <number>-100</number>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ProgressBarColor</class>
+   <extends>QWidget</extends>
+   <header>progressbarcolor.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget1</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>45</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>45</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>141</x>
+     <y>117</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>141</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget3</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>184</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>181</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
