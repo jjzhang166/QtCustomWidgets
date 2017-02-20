@@ -13,22 +13,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    dynamicprogressbartest.cpp \
-    taichiwait.cpp \
-    circlewait.cpp \
-    piewait.cpp \
-    linewait.cpp \
-    donutwait.cpp \
-    zoomcirclewait.cpp
+    dynamicprogressbartest.cpp
 
-HEADERS  += dynamicprogressbar.h \
-    dynamicprogressbartest.h \
-    taichiwait.h \
-    circlewait.h \
-    piewait.h \
-    linewait.h \
-    donutwait.h \
-    zoomcirclewait.h
+HEADERS  += dynamicprogressbartest.h
 
 FORMS += \
     dynamicprogressbartest.ui
@@ -39,3 +26,5 @@ RCC_DIR = temp/rcc
 UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
+
+include(../../DynamicProgressBar.pri)

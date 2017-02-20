@@ -13,11 +13,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        colorprogressbar.cpp \
     colorprogressbartest.cpp
 
-HEADERS  += colorprogressbar.h \
-    colorprogressbartest.h
+HEADERS  += colorprogressbartest.h
 
 FORMS += \
     colorprogressbartest.ui
@@ -28,3 +26,5 @@ RCC_DIR = temp/rcc
 UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
+
+include(../../ColorProgressBar.pri)
