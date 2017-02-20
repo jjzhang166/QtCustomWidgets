@@ -1,4 +1,4 @@
-#include "slidenavigationapp.h"
+﻿#include "slidenavigationapp.h"
 #include "ui_slidenavigationapp.h"
 
 SlideNavigationApp::SlideNavigationApp(QWidget *parent) :

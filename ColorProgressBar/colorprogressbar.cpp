@@ -1,4 +1,4 @@
-#include "colorprogressbar.h"
+﻿#include "colorprogressbar.h"
 #include <QPainter>
 #include <QDebug>
 

@@ -1,4 +1,4 @@
-#include "circlewait.h"
+﻿#include "circlewait.h"
 #include <QPainter>
 #include <QTimer>
 

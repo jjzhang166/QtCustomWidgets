@@ -63,7 +63,7 @@ void ProgressBarColor::drawBar(QPainter *painter)
 
     //计算进度值字符的宽度
     double currentValue = (double)(value - minValue) * 100 / (maxValue - minValue);
-    QString strValue = QString("%1%").arg(currentValue, 0, 'f', precision);
+    QString strValue = QString("当前值:%1%").arg(currentValue, 0, 'f', precision);
     QString strMaxValue = QString("%1%").arg(maxValue, 0, 'f', precision);
     //字符的宽度取最大值字符的宽度 + 10
     int textWidth = painter->fontMetrics().width(strMaxValue) + 10;

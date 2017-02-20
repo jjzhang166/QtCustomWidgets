@@ -13,12 +13,10 @@ TEMPLATE    = app
 
 SOURCES += main.cpp\
         frmprogressbarcolor.cpp \
-    flatui.cpp \
-    progressbarcolor.cpp
+    flatui.cpp
 
 HEADERS  += frmprogressbarcolor.h \
-    flatui.h \
-    progressbarcolor.h
+    flatui.h
 
 FORMS    += frmprogressbarcolor.ui
 
@@ -28,3 +26,5 @@ RCC_DIR = temp/rcc
 UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
+
+include(../../progressbarcolor.pri)

@@ -1,4 +1,4 @@
-#include "donutwait.h"
+﻿#include "donutwait.h"
 #include <QPainter>
 #include <QTimer>
 

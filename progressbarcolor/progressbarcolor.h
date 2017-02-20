@@ -10,7 +10,7 @@
 
 #include <QWidget>
 
-#ifdef quc
+#ifdef MSC
 #if (QT_VERSION < QT_VERSION_CHECK(5,7,0))
 #include <QtDesigner/QDesignerExportWidget>
 #else

@@ -1,4 +1,4 @@
-#include "zoomcirclewait.h"
+﻿#include "zoomcirclewait.h"
 #include <QPainter>
 #include <QTimer>
 #include <QDebug>

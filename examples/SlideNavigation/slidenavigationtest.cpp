@@ -1,4 +1,4 @@
-#include "slidenavigationtest.h"
+﻿#include "slidenavigationtest.h"
 #include "ui_slidenavigationtest.h"
 #include <QKeyEvent>
 

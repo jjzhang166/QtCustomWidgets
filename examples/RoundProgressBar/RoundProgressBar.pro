@@ -13,11 +13,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        roundprogressbar.cpp \
     roundprogressbartest.cpp
 
-HEADERS  += roundprogressbar.h \
-    roundprogressbartest.h
+HEADERS  += roundprogressbartest.h
 
 FORMS    += \
     roundprogressbartest.ui
@@ -28,3 +26,5 @@ RCC_DIR = temp/rcc
 UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
+
+include(../../RoundProgressBar.pri)

@@ -13,11 +13,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        rotatecircle.cpp \
     rotatecircletest.cpp
 
-HEADERS  += rotatecircle.h \
-    rotatecircletest.h
+HEADERS  += rotatecircletest.h
 
 FORMS += \
     rotatecircletest.ui
@@ -29,3 +27,4 @@ UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
 
+include(../../RotateCircle.pri)

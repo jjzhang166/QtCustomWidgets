@@ -1,12 +1,22 @@
-#ifndef SLIDENAVATION_H
+﻿#ifndef SLIDENAVATION_H
 #define SLIDENAVATION_H
 
 #include <QWidget>
 #include <QMap>
 
+#ifdef MSC
+#if (QT_VERSION < QT_VERSION_CHECK(5,7,0))
+#include <QtDesigner/QDesignerExportWidget>
+#else
+#include <QtUiPlugin/QDesignerExportWidget>
+#endif
+class QDESIGNER_WIDGET_EXPORT SlideNavigation: public QWidget
+#else
 class SlideNavigation : public QWidget
+#endif
 {
     Q_OBJECT
+    Q_PROPERTY(SlideNavigation::ItemLineStyle ItemLineStyle READ getItemLineStyle WRITE setItemLineStyle)
 
 public:
     enum ItemLineStyle
@@ -33,6 +43,7 @@ public:
     void setItemRadious(int radious);
     void setSpace(int space);
     void setItemLineWidth(int width);
+    ItemLineStyle getItemLineStyle() const { return m_itemLineStyle; }
     void setItemLineStyle(ItemLineStyle style);
     void setOrientation(Qt::Orientation orientation);
     void setFixed(bool fixed);

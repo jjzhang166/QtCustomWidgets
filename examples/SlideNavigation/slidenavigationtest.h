@@ -1,4 +1,4 @@
-#ifndef SLIDENAVIGATIONTEST_H
+﻿#ifndef SLIDENAVIGATIONTEST_H
 #define SLIDENAVIGATIONTEST_H
 
 #include <QWidget>

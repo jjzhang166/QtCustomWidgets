@@ -1,11 +1,24 @@
-#ifndef ROUNDPROGRESSBAR_H
+﻿#ifndef ROUNDPROGRESSBAR_H
 #define ROUNDPROGRESSBAR_H
 
 #include <QWidget>
 
+#ifdef MSC
+#if (QT_VERSION < QT_VERSION_CHECK(5,7,0))
+#include <QtDesigner/QDesignerExportWidget>
+#else
+#include <QtUiPlugin/QDesignerExportWidget>
+#endif
+class QDESIGNER_WIDGET_EXPORT RoundProgressBar: public QWidget
+#else
 class RoundProgressBar : public QWidget
+#endif
 {
     Q_OBJECT
+
+
+    Q_PROPERTY(double StartAngle READ getStartAngle WRITE setStartAngle)
+    Q_PROPERTY(RoundProgressBar::BarStyle BarStyle READ getBarStyle WRITE setBarStyle)
 
 public:
     explicit RoundProgressBar(QWidget *parent = 0);
@@ -24,7 +37,9 @@ public:
     static const int PositionRight = 0;
     static const int PositionBottom = -90;
 
+    double getStartAngle() const { return m_startAngle; }
     void setStartAngle(double angle);
+    BarStyle getBarStyle() const { return m_barStyle; }
     void setBarStyle(BarStyle style);
     void setOutlinePenWidth(double penWidth);
     void setDataPenWidth(double penWidth);

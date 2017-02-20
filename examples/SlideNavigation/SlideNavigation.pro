@@ -13,12 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    slidenavigationtest.cpp \
-    slidenavigation.cpp
+    slidenavigationtest.cpp
 
 HEADERS  += \
-    slidenavigationtest.h \
-    slidenavigation.h
+    slidenavigationtest.h
 
 FORMS += \
     slidenavigationtest.ui
@@ -29,3 +27,5 @@ RCC_DIR = temp/rcc
 UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
+
+include(../../SlideNavigation.pri)
