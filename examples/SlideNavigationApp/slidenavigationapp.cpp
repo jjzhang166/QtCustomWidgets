@@ -1,4 +1,5 @@
-﻿#include "slidenavigationapp.h"
+﻿#pragma execution_character_set("utf-8")
+#include "slidenavigationapp.h"
 #include "ui_slidenavigationapp.h"
 
 SlideNavigationApp::SlideNavigationApp(QWidget *parent) :

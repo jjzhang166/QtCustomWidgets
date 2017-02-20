@@ -1,4 +1,5 @@
-﻿#include "slidenavigationtest.h"
+﻿#pragma execution_character_set("utf-8")
+#include "slidenavigationtest.h"
 #include "ui_slidenavigationtest.h"
 #include <QKeyEvent>
 
