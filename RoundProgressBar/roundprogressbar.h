@@ -32,6 +32,7 @@ public:
         StylePie,//饼状
         StyleLine,//线条
     };
+    Q_ENUM(BarStyle)
     //起始角度
     static const int PositionLeft = 180;
     static const int PositionTop = 90;

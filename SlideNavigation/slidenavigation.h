@@ -17,7 +17,7 @@ class SlideNavigation : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(SlideNavigation::ItemLineStyle ItemLineStyle READ getItemLineStyle WRITE setItemLineStyle)
-    Q_PROPERTY(QString Items READ getItems WRITE addItems)
+    Q_PROPERTY(QString Items READ getItems WRITE setItems)
     Q_PROPERTY(int CurrentItemIndex READ getCurrentItemIndex WRITE setCurrentItemIndex)
 public:
     enum ItemLineStyle
@@ -29,12 +29,13 @@ public:
         ItemLeft,//左方
         ItemRect,//矩形
     };
+    Q_ENUM(ItemLineStyle)
 
     SlideNavigation(QWidget *parent = 0);
     ~SlideNavigation();
 
     void addItem(QString str);
-    void addItems(QString str);
+    void setItems(QString str);
     QString getItems() const;
     void setBarStartColor(QColor color);
     void setBarEndColor(QColor color);
