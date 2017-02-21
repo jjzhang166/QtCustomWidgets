@@ -43,6 +43,10 @@ public:
     int getSetpAngle() const { return m_stepAngle; }
     void setSetpAngle(int angle);//设置每次旋转角度
     bool getClockwise() const { return m_clockwise; }
+
+signals:
+
+public slots:
     void setClockwise(bool clockwise);//顺时针旋转
 
 protected:

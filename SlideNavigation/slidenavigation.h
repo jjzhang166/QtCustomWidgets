@@ -17,7 +17,8 @@ class SlideNavigation : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(SlideNavigation::ItemLineStyle ItemLineStyle READ getItemLineStyle WRITE setItemLineStyle)
-
+    Q_PROPERTY(QString Items READ getItems WRITE addItems)
+    Q_PROPERTY(int CurrentItemIndex READ getCurrentItemIndex WRITE setCurrentItemIndex)
 public:
     enum ItemLineStyle
     {
@@ -33,6 +34,8 @@ public:
     ~SlideNavigation();
 
     void addItem(QString str);
+    void addItems(QString str);
+    QString getItems() const;
     void setBarStartColor(QColor color);
     void setBarEndColor(QColor color);
     void setItemStartColor(QColor color);
@@ -47,9 +50,12 @@ public:
     void setItemLineStyle(ItemLineStyle style);
     void setOrientation(Qt::Orientation orientation);
     void setFixed(bool fixed);
+    int getCurrentItemIndex() const { return m_currentItemIndex; }
+
 
 signals:
     void itemClicked(int index, QString str);
+
 
 public slots:
     void setEnableKeyMove(bool enable);
@@ -60,6 +66,7 @@ public slots:
     void moveTo(int index);
     void moveTo(QString str);
     void moveTo(QPointF point);
+    void setCurrentItemIndex(int index) { moveTo(index); }
 
 
 protected:

@@ -30,13 +30,13 @@ public:
     QColor getBackColor() const { return m_backColor; }
     void setBackColor(QColor color);
     bool getClockwiseRotate() { return m_clockwiseRotate; }
-    void setClockwiseRotate(bool clockwise);
     int getRotateDelta() const { return m_rotateDelta; }
-    void setRotateDelta(int delta);
 
 signals:
 
 public slots:
+    void setClockwiseRotate(bool clockwise);
+    void setRotateDelta(int delta);
 
 protected:
     void paintEvent(QPaintEvent *);

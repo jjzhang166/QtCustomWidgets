@@ -1,4 +1,4 @@
-#ifndef CUSTOMWIDGETLIST_H
+﻿#ifndef CUSTOMWIDGETLIST_H
 #define CUSTOMWIDGETLIST_H
 
 #include <QtDesigner>

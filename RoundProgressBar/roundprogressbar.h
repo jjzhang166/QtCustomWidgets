@@ -19,6 +19,7 @@ class RoundProgressBar : public QWidget
 
     Q_PROPERTY(double StartAngle READ getStartAngle WRITE setStartAngle)
     Q_PROPERTY(RoundProgressBar::BarStyle BarStyle READ getBarStyle WRITE setBarStyle)
+    Q_PROPERTY(double Value READ getValue WRITE setValue)
 
 public:
     explicit RoundProgressBar(QWidget *parent = 0);
@@ -41,12 +42,15 @@ public:
     void setStartAngle(double angle);
     BarStyle getBarStyle() const { return m_barStyle; }
     void setBarStyle(BarStyle style);
+    double getValue() const { return m_value; }
     void setOutlinePenWidth(double penWidth);
     void setDataPenWidth(double penWidth);
     void setDataColors(const QGradientStops& stopPoints);
     void setFormat(const QString& format);
     void setDecimals(int count);
     void setClockwise(bool clockwise);
+
+signals:
 
 public slots:
     void setRange(double min, double max);

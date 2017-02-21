@@ -41,7 +41,7 @@ QString ColorProgressBarPlugin::group() const
 
 QIcon ColorProgressBarPlugin::icon() const
 {
-    return QIcon(QLatin1String(":/ColorProgressBar.png"));
+    return QIcon(QLatin1String(":/images/ColorProgressBar.png"));
 }
 
 QString ColorProgressBarPlugin::toolTip() const
@@ -67,8 +67,8 @@ QString ColorProgressBarPlugin::domXml() const
                          "   <rect>\n"
                          "    <x>0</x>\n"
                          "    <y>0</y>\n"
-                         "    <width>30</width>\n"
-                         "    <height>100</height>\n"
+                         "    <width>300</width>\n"
+                         "    <height>30</height>\n"
                          "   </rect>\n"
                          "  </property>\n"
                          " </widget>\n"

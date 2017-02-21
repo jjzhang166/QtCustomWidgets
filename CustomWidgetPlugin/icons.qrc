@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/CircleWait.png</file>
+        <file>images/ColorProgressBar.png</file>
+        <file>images/DonutWait.png</file>
+        <file>images/LineWait.png</file>
+        <file>images/PieWait.png</file>
+        <file>images/RoundProgressBar.png</file>
+        <file>images/TaiChiWait.png</file>
+        <file>images/ZoomCircleWait.png</file>
+        <file>images/RotateCircle.png</file>
+        <file>images/SlideNavigation.png</file>
+    </qresource>
+</RCC>

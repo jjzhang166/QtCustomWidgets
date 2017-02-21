@@ -41,7 +41,7 @@ QString RoundProgressBarPlugin::group() const
 
 QIcon RoundProgressBarPlugin::icon() const
 {
-    return QIcon(QLatin1String(":/RoundProgressBar.png"));
+    return QIcon(QLatin1String(":/images/RoundProgressBar.png"));
 }
 
 QString RoundProgressBarPlugin::toolTip() const

@@ -105,6 +105,27 @@ void SlideNavigation::addItem(QString str)
     update();
 }
 
+void SlideNavigation::addItems(QString str)
+{
+    QStringList items = str.split(";");
+    for(int i=0; i<items.size(); ++i)
+    {
+        QString itemStr = items.at(i);
+        addItem(itemStr);
+    }
+}
+
+QString SlideNavigation::getItems() const
+{
+    QString str;
+    QMap<int, QPair<QString, QRectF> >::const_iterator it = m_itemList.begin();
+    for(; it!=m_itemList.end(); ++it)
+    {
+        str.append(it.value().first);
+    }
+    return str;
+}
+
 void SlideNavigation::setBarStartColor(QColor color)
 {
     if(color != m_barStartColor)

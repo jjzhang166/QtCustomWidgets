@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/" >
-        <file>RoundProgressBar.png</file>
-        <file>ColorProgressBar.png</file>
-
-    </qresource>
-</RCC>
