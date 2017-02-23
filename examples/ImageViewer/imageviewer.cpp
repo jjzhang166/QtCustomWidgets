@@ -1,4 +1,5 @@
-﻿#include "imageviewer.h"
+﻿#pragma execution_character_set("utf-8")
+#include "imageviewer.h"
 #include <QPainter>
 #include <QToolButton>
 #include <QTimer>

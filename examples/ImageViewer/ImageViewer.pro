@@ -23,7 +23,7 @@ HEADERS  += \
 FORMS += \
     imageviewertest.ui
 
-CONFIG += release
+#CONFIG += release
 MOC_DIR = temp/moc
 RCC_DIR = temp/rcc
 UI_DIR = temp/ui

@@ -49,6 +49,7 @@ public:
         SuitableSize,//适合大小
         FillSize,//填充大小
     };
+//    Q_DECLARE_METATYPE(ImageSizeType)
 
     ImageViewer(QWidget *parent = 0);
     ~ImageViewer();
@@ -78,6 +79,8 @@ private:
     void showSuitableImage(QPainter* p);
     void showOriginalImage(QPainter* p);
     void showFillImage(QPainter* p);
+
+private slots:
     void fadeImage();
 
 private:
