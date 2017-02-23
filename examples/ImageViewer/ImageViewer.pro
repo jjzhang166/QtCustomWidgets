@@ -12,7 +12,7 @@ TARGET = ImageViewer
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
     imageviewertest.cpp
 
 HEADERS  += imageviewertest.h
