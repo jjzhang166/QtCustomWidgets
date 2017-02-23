@@ -14,7 +14,6 @@ public:
     PageNum(QWidget *parent = 0);
     ~PageNum();
 
-
     void setBackgroundColor(const QColor& color);
     void setTextColor(const QColor& color);
 
@@ -49,12 +48,13 @@ public:
         SuitableSize,//适合大小
         FillSize,//填充大小
     };
-//    Q_DECLARE_METATYPE(ImageSizeType)
+    Q_ENUM(ImageSizeType)
 
     ImageViewer(QWidget *parent = 0);
     ~ImageViewer();
 
     void loadImages(QString path);
+
 signals:
     void imageNumberchanged(int number);
     void imageIndexChanged(int index);
@@ -68,19 +68,24 @@ public slots:
     void setSizeType(ImageSizeType type);
     void setFadeEnable(bool enable);
     void setKeyMoveEnable(bool enable);
+    void clear();
+    void loadImages();
 
 protected:
     void paintEvent(QPaintEvent*);
+    void keyPressEvent(QKeyEvent *event);
+    void showEvent(QShowEvent *);
     void resizeEvent(QResizeEvent*);
     void drawBackground(QPainter* p);
     void drawImage(QPainter* p);
 
 private:
-    void showSuitableImage(QPainter* p);
     void showOriginalImage(QPainter* p);
+    void showSuitableImage(QPainter* p);
     void showFillImage(QPainter* p);
 
 private slots:
+    void adjustWidgetPos();
     void fadeImage();
 
 private:
@@ -102,7 +107,6 @@ private:
     QStringList m_imageNames;//图片名字列表
     QTimer* m_fadeTimer;//逐渐显示定时器
     qreal m_opacity;//当前不透明度
-
 };
 
 #endif // IMAGEVIEWER_H

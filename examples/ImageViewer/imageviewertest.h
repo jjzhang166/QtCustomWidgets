@@ -17,7 +17,6 @@ public:
 
 public slots:
     void setImageSizeType(int index);
-    void getImagePath();
 private:
     Ui::ImageViewerTest *ui;
 };

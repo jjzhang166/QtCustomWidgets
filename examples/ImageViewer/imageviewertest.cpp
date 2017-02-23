@@ -16,7 +16,7 @@ ImageViewerTest::ImageViewerTest(QWidget *parent) :
     connect(ui->sizeTypeComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setImageSizeType(int)));
     connect(ui->fadeCkb, SIGNAL(clicked(bool)), ui->imageViewer, SLOT(setFadeEnable(bool)));
     connect(ui->keyMoveCkb, SIGNAL(clicked(bool)), ui->imageViewer, SLOT(setKeyMoveEnable(bool)));
-    connect(ui->openBtn, SIGNAL(clicked(bool)), this, SLOT(getImagePath()));
+    connect(ui->openBtn, SIGNAL(clicked(bool)), ui->imageViewer, SLOT(loadImages()));
 }
 
 ImageViewerTest::~ImageViewerTest()
@@ -28,13 +28,4 @@ void ImageViewerTest::setImageSizeType(int index)
 {
     ImageViewer::ImageSizeType type =(ImageViewer::ImageSizeType)(ui->sizeTypeComboBox->itemData(index).toInt());
     ui->imageViewer->setSizeType(type);
-}
-
-void ImageViewerTest::getImagePath()
-{
-    QString dir = QFileDialog::getExistingDirectory(this, tr("选择图片文件夹"),
-                                                    ".",
-                                                      QFileDialog::ShowDirsOnly
-                                                      | QFileDialog::DontResolveSymlinks);
-    ui->imageViewer->loadImages(dir);
 }

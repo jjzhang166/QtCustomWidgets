@@ -12,20 +12,19 @@ TARGET = ImageViewer
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-    imageviewer.cpp \
+SOURCES += main.cpp
     imageviewertest.cpp
 
-HEADERS  += \
-    imageviewer.h \
-    imageviewertest.h
+HEADERS  += imageviewertest.h
 
 FORMS += \
     imageviewertest.ui
 
-#CONFIG += release
+CONFIG += release
 MOC_DIR = temp/moc
 RCC_DIR = temp/rcc
 UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
+
+include(../../ImageViewer.pri)
