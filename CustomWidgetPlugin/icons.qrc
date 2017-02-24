@@ -10,5 +10,6 @@
         <file>images/ZoomCircleWait.png</file>
         <file>images/RotateCircle.png</file>
         <file>images/SlideNavigation.png</file>
+        <file>images/ImageViewer.png</file>
     </qresource>
 </RCC>

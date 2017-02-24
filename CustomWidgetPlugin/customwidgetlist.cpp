@@ -2,6 +2,7 @@
 #include "colorprogressbarplugin.h"
 #include "customwidgetlist.h"
 #include "donutwaitplugin.h"
+#include "imageviewerplugin.h"
 #include "linewaitplugin.h"
 #include "piewaitplugin.h"
 #include "rotatecircleplugin.h"
@@ -16,6 +17,7 @@ CustomWidgetList::CustomWidgetList(QObject *parent)
     m_widgets.append(new CircleWaitPlugin(this));
     m_widgets.append(new ColorProgressBarPlugin(this));
     m_widgets.append(new DonutWaitPlugin(this));
+    m_widgets.append(new ImageViewerPlugin(this));
     m_widgets.append(new LineWaitPlugin(this));
     m_widgets.append(new PieWaitPlugin(this));
     m_widgets.append(new RotateCirclePlugin(this));

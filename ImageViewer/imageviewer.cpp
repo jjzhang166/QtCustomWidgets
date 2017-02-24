@@ -116,10 +116,12 @@ ImageViewer::ImageViewer(QWidget *parent)
     m_preBtn->setIcon(style->standardIcon(QStyle::SP_ArrowLeft));
     m_preBtn->setIconSize(m_pageBtnSize);
     m_preBtn->setAutoRaise(true);
+    m_preBtn->setArrowType(Qt::LeftArrow);
     m_nextBtn = new QToolButton(this);
     m_nextBtn->setIcon(style->standardIcon(QStyle::SP_ArrowRight));
     m_nextBtn->setIconSize(m_pageBtnSize);
     m_nextBtn->setAutoRaise(true);
+    m_nextBtn->setArrowType(Qt::RightArrow);
     m_pageNum = new PageNum(this);
     m_curImageIndex = 0;
     m_fadeTimer = new QTimer(this);
@@ -159,6 +161,58 @@ void ImageViewer::loadImages(QString path)
     emit imageNumberchanged(m_imageNames.size());
 
     moveTo(0);
+}
+
+void ImageViewer::setBackgroundStartColor(QColor color)
+{
+    if(color != m_backgroundStartColor)
+    {
+        m_backgroundStartColor = color;
+        update();
+    }
+}
+
+void ImageViewer::setBackgroundEndColor(QColor color)
+{
+    if(color != m_backgroundEndColor)
+    {
+        m_backgroundEndColor = color;
+        update();
+    }
+}
+
+void ImageViewer::setPageBtnLeftMargin(int margin)
+{
+    if(margin != m_pageBtnLeftMargin)
+    {
+        m_pageBtnLeftMargin = margin;
+        adjustWidgetPos();
+        update();
+    }
+}
+
+void ImageViewer::setPageNumBottomMargin(int margin)
+{
+    if(margin != m_pageNumBottomMargin)
+    {
+        m_pageNumBottomMargin = margin;
+        adjustWidgetPos();
+        update();
+    }
+}
+
+void ImageViewer::setPageBtnSize(const QSize& size)
+{
+    if(size != m_pageBtnSize)
+    {
+        m_pageBtnSize = size;
+        m_preBtn->resize(m_pageBtnSize);
+        m_preBtn->setIconSize(m_pageBtnSize);
+        m_nextBtn->resize(m_pageBtnSize);
+        m_nextBtn->setIconSize(m_pageBtnSize);
+        adjustWidgetPos();
+        update();
+    }
 }
 
 void ImageViewer::moveTo(int index)

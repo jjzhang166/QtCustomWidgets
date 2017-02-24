@@ -37,9 +37,27 @@ private:
 };
 
 //图片查看控件
+#ifdef MSC
+#if (QT_VERSION < QT_VERSION_CHECK(5,7,0))
+#include <QtDesigner/QDesignerExportWidget>
+#else
+#include <QtUiPlugin/QDesignerExportWidget>
+#endif
+
+class QDESIGNER_WIDGET_EXPORT ImageViewer: public QWidget
+#else
 class ImageViewer : public QWidget
+#endif
 {
     Q_OBJECT
+    Q_PROPERTY(QColor backgroundStartColor READ backgroundStartColor WRITE setBackgroundStartColor)
+    Q_PROPERTY(QColor backgroundEndColor READ backgroundEndColor WRITE setBackgroundEndColor)
+    Q_PROPERTY(int pageBtnLeftMargin READ pageBtnLeftMargin WRITE setPageBtnLeftMargin)
+    Q_PROPERTY(int pageNumBottomMargin READ pageNumBottomMargin WRITE setPageNumBottomMargin)
+    Q_PROPERTY(QSize pageBtnSize READ pageBtnSize WRITE setPageBtnSize)
+    Q_PROPERTY(ImageSizeType imageSizeType READ imageSizeType WRITE setSizeType)
+    Q_PROPERTY(bool fadeEnable READ fadeEnable WRITE setFadeEnable)
+    Q_PROPERTY(bool keyMoveEnable READ keyMoveEnable WRITE setKeyMoveEnable)
 
 public:
     enum ImageSizeType
@@ -54,6 +72,19 @@ public:
     ~ImageViewer();
 
     void loadImages(QString path);
+    QColor backgroundStartColor() const { return m_backgroundStartColor; }
+    void setBackgroundStartColor(QColor color);
+    QColor backgroundEndColor() const { return m_backgroundEndColor; }
+    void setBackgroundEndColor(QColor color);
+    int pageBtnLeftMargin() const { return m_pageBtnLeftMargin; }
+    void setPageBtnLeftMargin(int margin);
+    int pageNumBottomMargin() const { return m_pageNumBottomMargin; }
+    void setPageNumBottomMargin(int margin);
+    QSize pageBtnSize() const { return m_pageBtnSize; }
+    void setPageBtnSize(const QSize& size);
+    ImageSizeType imageSizeType() const { return m_sizeType; }
+    bool fadeEnable() const { return m_fadeEnable; }
+    bool keyMoveEnable() const { return m_keyMoveEnable; }
 
 signals:
     void imageNumberchanged(int number);

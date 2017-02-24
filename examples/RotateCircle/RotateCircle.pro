@@ -27,4 +27,4 @@ UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
 
-include(../../RotateCircle.pri)
+include(../../RotateCircle/RotateCircle.pri)

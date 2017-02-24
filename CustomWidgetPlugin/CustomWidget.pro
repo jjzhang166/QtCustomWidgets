@@ -12,7 +12,8 @@ HEADERS     += colorprogressbarplugin.h \
     taichiwaitplugin.h \
     zoomcirclewaitplugin.h \
     rotatecircleplugin.h \
-    slidenavigationplugin.h
+    slidenavigationplugin.h \
+    imageviewerplugin.h
 SOURCES     += colorprogressbarplugin.cpp \
     roundprogressbarplugin.cpp \
     customwidgetlist.cpp \
@@ -23,7 +24,8 @@ SOURCES     += colorprogressbarplugin.cpp \
     taichiwaitplugin.cpp \
     zoomcirclewaitplugin.cpp \
     rotatecircleplugin.cpp \
-    slidenavigationplugin.cpp
+    slidenavigationplugin.cpp \
+    imageviewerplugin.cpp
 RESOURCES   = icons.qrc
 LIBS        += -L. 
 
@@ -36,11 +38,12 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 target.path = $$[QT_INSTALL_PLUGINS]/designer
 INSTALLS    += target
 
-include(../ColorProgressBar.pri)
-include(../DynamicProgressBar.pri)
-include(../RotateCircle.pri)
-include(../RoundProgressBar.pri)
-include(../SlideNavigation.pri)
+include(../ColorProgressBar/ColorProgressBar.pri)
+include(../DynamicProgressBar/DynamicProgressBar.pri)
+include(../RotateCircle/RotateCircle.pri)
+include(../RoundProgressBar/RoundProgressBar.pri)
+include(../SlideNavigation/SlideNavigation.pri)
+include(../ImageViewer/ImageViewer.pri)
 
 CONFIG += release
 MOC_DIR = temp/moc

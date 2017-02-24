@@ -3,6 +3,7 @@
 #include "imageviewer.h"
 #include "ui_imageviewertest.h"
 #include <QFileDialog>
+#include <QDebug>
 
 ImageViewerTest::ImageViewerTest(QWidget *parent) :
     QWidget(parent),
@@ -28,4 +29,8 @@ void ImageViewerTest::setImageSizeType(int index)
 {
     ImageViewer::ImageSizeType type =(ImageViewer::ImageSizeType)(ui->sizeTypeComboBox->itemData(index).toInt());
     ui->imageViewer->setSizeType(type);
+    int size = (1+index)*50;
+    ui->imageViewer->setPageBtnSize(QSize(size, size));
+    qDebug() << size;
+    qDebug() << ui->imageViewer->pageBtnSize();
 }

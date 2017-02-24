@@ -28,4 +28,4 @@ UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
 
-include(../../SlideNavigation.pri)
+include(../../SlideNavigation/SlideNavigation.pri)
