@@ -56,3 +56,10 @@ Qt5.x + mingw-QtCreater
 Qt5.x + mingw-QtCreater
 运行截图:
 ![图片浏览器](http://git.oschina.net/uploads/images/2017/0227/093949_6a309a6e_66940.gif "图片浏览器")
+
+#CurveChart
+简单曲线图
+编译环境: 
+Qt5.x + mingw-QtCreater
+运行截图:
+![简单曲线图](http://git.oschina.net/uploads/images/2017/0228/161248_4025f556_66940.gif "简单曲线图")
