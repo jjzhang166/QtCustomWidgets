@@ -1,6 +1,7 @@
 ﻿#include "curvechart.h"
 #include <QPainter>
 #include <QtMath>
+#include <QDebug>
 
 CurveChart::CurveChart(QWidget *parent)
     : QWidget(parent)
@@ -21,9 +22,6 @@ CurveChart::CurveChart(QWidget *parent)
     m_showLine = true;
     m_showPoint = true;
     m_showPointBg = true;
-    //预留2个位置作为起始点和终止点
-    m_points.append(QPointF(0,0));
-    m_points.append(QPointF(0,0));
 }
 
 CurveChart::~CurveChart()
@@ -131,23 +129,41 @@ void CurveChart::setChartBottomMargin(qreal margin)
     }
 }
 
+QString CurveChart::DataString() const
+{
+    QStringList points;
+    for(int i=0; i<m_points.size(); ++i)
+    {
+        points << QString("%1").arg(m_points[i]);
+    }
+    return points.join("|");
+}
+
+void CurveChart::addDataStr(QString str)
+{
+    clearData();
+    QStringList dataList = str.split("|");
+    foreach(QString valStr, dataList)
+    {
+        bool ok;
+        double val = valStr.toDouble(&ok);
+        if(ok)
+        {
+            addData(val);
+        }
+    }
+}
+
 void CurveChart::addData(qreal val)
 {
-    int maxNum = qFloor((width()-m_chartLeftMargin-m_chartRightMargin)/m_stepH)-1;
+    int maxNum = qFloor((width()-m_chartLeftMargin-m_chartRightMargin)/m_stepH);
     if(maxNum < 0) { return; }
     if(m_points.size()>maxNum)
     {
-        m_points.remove(1);//移除最早添加的数据
+        m_points.pop_front();
     }
-    m_points.insert(m_points.size(), QPointF(0,val));
-    int size = m_points.size();
-    qreal dx = width()-m_chartRightMargin-m_stepH*(size-1);
-    for(int i=0; i<size; +=i)
-    {
-        m_points[i].setX();
-        m_points
-    }
-
+    m_points.push_back(val);
+    update();
 }
 
 void CurveChart::setTitle(QString str)
@@ -182,6 +198,15 @@ void CurveChart::setShowPointBackground(bool show)
     if(show != m_showPointBg)
     {
         m_showPointBg = show;
+        update();
+    }
+}
+
+void CurveChart::clearData()
+{
+    if(m_points.size()>0)
+    {
+        m_points.clear();
         update();
     }
 }
@@ -279,21 +304,55 @@ void CurveChart::drawText(QPainter *p)
 
 void CurveChart::drawPoints(QPainter *p)
 {
+    if(m_points.isEmpty())
+        return;
     p->save();
+    QVector<QPointF> posVec;
+
+    qreal dx = width()-m_chartRightMargin;
+    qreal dy = height()-m_chartBottomMargin;
+    qreal percent = (height()-m_chartTopMargin-m_chartBottomMargin)/(m_max-m_min);
+    posVec.append(QPointF(dx, dy));//结束点
+    QVector<qreal>::reverse_iterator it;
+    for(it = m_points.rbegin(); it!= m_points.rend(); ++it)
+    {
+        if(dx<m_chartLeftMargin)
+        {
+            break;
+        }
+        posVec.append(QPointF(dx, dy-(*it-m_min)*percent));
+        dx -= m_stepH;
+    }
+    posVec.append(QPointF(dx<m_chartLeftMargin?m_chartLeftMargin:dx, dy));
+    if(!m_showPointBg)
+    {//不显示背景的话去除起始点和结束点
+        posVec.pop_front();
+        posVec.pop_back();
+    }
     //画圆点
     if(m_showPoint)
     {
-        int size = m_points.size();
-        qreal dx = width()-m_chartRightMargin-m_stepH*(size-1);
-
-        for(int i=0; i<m_points.size(); ++i)
+        int radious = m_stepH/2;
+        p->save();
+        p->setPen(Qt::NoPen);
+        p->setBrush(m_pointColor);
+        for(int i=0; i<posVec.size(); ++i)
         {
-
+            p->drawEllipse(posVec[i], radious, radious);
         }
+        p->restore();
     }
+    //画线
+    p->setPen(m_pointColor);
     if(m_showPointBg)
     {
-
+        p->setBrush(m_pointColor);
+        p->setOpacity(0.5);
+        p->drawConvexPolygon(QPolygonF(posVec));
+    }
+    else
+    {
+        p->drawPolyline(QPolygonF(posVec));
     }
     p->restore();
 }

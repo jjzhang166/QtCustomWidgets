@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>833</width>
+    <height>529</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="CircleWait" name="circleWait">
+       <property name="RotateDelta">
+        <number>36</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="DonutWait" name="donutWait"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="LineWait" name="lineWait"/>
+     </item>
+     <item row="0" column="3">
+      <widget class="PieWait" name="pieWait"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="RotateCircle" name="rotateCircle"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="RoundProgressBar" name="roundProgressBar">
+       <property name="Value">
+        <double>30.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="TaiChiWait" name="taiChiWait"/>
+     </item>
+     <item row="1" column="3">
+      <widget class="ZoomCircleWait" name="zoomCircleWait"/>
+     </item>
+     <item row="0" column="4">
+      <widget class="ImageViewer" name="imageViewer">
+       <property name="backgroundStartColor">
+        <color>
+         <red>30</red>
+         <green>50</green>
+         <blue>80</blue>
+        </color>
+       </property>
+       <property name="pageBtnLeftMargin">
+        <number>10</number>
+       </property>
+       <property name="pageNumBottomMargin">
+        <number>0</number>
+       </property>
+       <property name="pageBtnSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="CurveChart" name="curveChart"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="ColorProgressBar" name="colorProgressBar">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="Value">
+        <double>30.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QSlider" name="horizontalSlider">
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>30</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkBox">
+         <property name="text">
+          <string>顺时针</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CircleWait</class>
+   <extends>QWidget</extends>
+   <header>circlewait.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CurveChart</class>
+   <extends>QWidget</extends>
+   <header>curveChart.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ColorProgressBar</class>
+   <extends>QWidget</extends>
+   <header>colorprogressbar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>DonutWait</class>
+   <extends>QWidget</extends>
+   <header>donutwait.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ImageViewer</class>
+   <extends>QWidget</extends>
+   <header>imageviewer.h</header>
+  </customwidget>
+  <customwidget>
+   <class>LineWait</class>
+   <extends>QWidget</extends>
+   <header>linewait.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PieWait</class>
+   <extends>QWidget</extends>
+   <header>piewait.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RotateCircle</class>
+   <extends>QWidget</extends>
+   <header>rotatecircle.h</header>
+  </customwidget>
+  <customwidget>
+   <class>RoundProgressBar</class>
+   <extends>QWidget</extends>
+   <header>roundprogressbar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>TaiChiWait</class>
+   <extends>QWidget</extends>
+   <header>taichiwait.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ZoomCircleWait</class>
+   <extends>QWidget</extends>
+   <header>zoomcirclewait.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>colorProgressBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>116</x>
+     <y>403</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>roundProgressBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>473</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>143</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>circleWait</receiver>
+   <slot>setClockwiseRotate(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>72</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>donutWait</receiver>
+   <slot>setClockwiseRotate(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>lineWait</receiver>
+   <slot>setClockwiseRotate(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>87</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>pieWait</receiver>
+   <slot>setClockwiseRotate(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>328</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>rotateCircle</receiver>
+   <slot>setClockwise(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>35</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>taiChiWait</receiver>
+   <slot>setClockwiseRotate(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>471</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>308</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -13,7 +13,8 @@ HEADERS     += colorprogressbarplugin.h \
     zoomcirclewaitplugin.h \
     rotatecircleplugin.h \
     slidenavigationplugin.h \
-    imageviewerplugin.h
+    imageviewerplugin.h \
+    curvechartplugin.h
 SOURCES     += colorprogressbarplugin.cpp \
     roundprogressbarplugin.cpp \
     customwidgetlist.cpp \
@@ -25,7 +26,8 @@ SOURCES     += colorprogressbarplugin.cpp \
     zoomcirclewaitplugin.cpp \
     rotatecircleplugin.cpp \
     slidenavigationplugin.cpp \
-    imageviewerplugin.cpp
+    imageviewerplugin.cpp \
+    curvechartplugin.cpp
 RESOURCES   = icons.qrc
 LIBS        += -L. 
 
@@ -39,6 +41,7 @@ target.path = $$[QT_INSTALL_PLUGINS]/designer
 INSTALLS    += target
 
 include(../ColorProgressBar/ColorProgressBar.pri)
+include(../CurveChart/CurveChart.pri)
 include(../DynamicProgressBar/DynamicProgressBar.pri)
 include(../RotateCircle/RotateCircle.pri)
 include(../RoundProgressBar/RoundProgressBar.pri)

@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-02-24T23:14:08
+# Project created by QtCreator 2017-02-20T19:57:10
 #
 #-------------------------------------------------
 
@@ -8,17 +8,16 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = CurveChart
+TARGET = CustomWidgetTest
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    curvecharttest.cpp
+        widget.cpp
 
-HEADERS  += curvecharttest.h
+HEADERS  += widget.h
 
-FORMS += \
-    curvecharttest.ui
+FORMS    += widget.ui
 
 CONFIG += release
 MOC_DIR = temp/moc
@@ -27,4 +26,5 @@ UI_DIR = temp/ui
 OBJECTS_DIR = temp/obj
 DESTDIR = bin
 
-include(../../CurveChart/CurveChart.pri)
+include(CustomWidget.pri)
+LIBS += $$PWD/include/customwidgetlistplugin.lib

@@ -1,4 +1,4 @@
-#ifndef CURVECHARTTEST_H
+﻿#ifndef CURVECHARTTEST_H
 #define CURVECHARTTEST_H
 
 #include <QWidget>
@@ -14,9 +14,12 @@ class CurveChartTest : public QWidget
 public:
     explicit CurveChartTest(QWidget *parent = 0);
     ~CurveChartTest();
+private slots:
+    void addData();
 
 private:
     Ui::CurveChartTest *ui;
+    QTimer* dataTimer;
 };
 
 #endif // CURVECHARTTEST_H

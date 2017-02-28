@@ -1,5 +1,6 @@
 ﻿#include "circlewaitplugin.h"
 #include "colorprogressbarplugin.h"
+#include "curvechartplugin.h"
 #include "customwidgetlist.h"
 #include "donutwaitplugin.h"
 #include "imageviewerplugin.h"
@@ -15,6 +16,7 @@ CustomWidgetList::CustomWidgetList(QObject *parent)
     : QObject(parent)
 {
     m_widgets.append(new CircleWaitPlugin(this));
+    m_widgets.append(new CurveChartPlugin(this));
     m_widgets.append(new ColorProgressBarPlugin(this));
     m_widgets.append(new DonutWaitPlugin(this));
     m_widgets.append(new ImageViewerPlugin(this));

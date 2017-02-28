@@ -6,16 +6,90 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>736</width>
+    <height>482</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="CurveChart" name="widget" native="true"/>
+    <widget class="CurveChart" name="widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="showLineCkb">
+       <property name="text">
+        <string>显示横线</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="showPointCkb">
+       <property name="text">
+        <string>显示坐标点</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="showPointBgCkb">
+       <property name="text">
+        <string>显示坐标点背景</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="simulateBtn">
+       <property name="text">
+        <string>模拟数据</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="clearBtn">
+       <property name="text">
+        <string>清空数据</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
@@ -25,8 +99,79 @@
    <extends>QWidget</extends>
    <header>curvechart.h</header>
    <container>1</container>
+   <slots>
+    <slot>setShowLine(bool)</slot>
+    <slot>setShowPoint(bool)</slot>
+    <slot>setShowPointBackground(bool)</slot>
+    <slot>clearData()</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>showLineCkb</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>widget</receiver>
+   <slot>setShowLine(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>319</x>
+     <y>358</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>293</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showPointCkb</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>widget</receiver>
+   <slot>setShowPoint(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>411</x>
+     <y>357</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>431</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showPointBgCkb</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>widget</receiver>
+   <slot>setShowPointBackground(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>518</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>widget</receiver>
+   <slot>clearData()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>688</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>657</x>
+     <y>184</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
