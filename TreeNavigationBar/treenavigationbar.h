@@ -18,11 +18,11 @@ struct TreeNode : public QObject
     bool foldState;//折叠状态
     FoldShapeStyle foldStyle;//折叠类型
     int level;//当前层级
-    QList<Node*> child;
+    QList<TreeNode*> child;
     TreeNode(QObject *parent = 0);
-    TreeNode(const QString& info, const QString& extraInfo, QObject *parent = 0);
+    TreeNode(const QString& baseInfo, const QString& extraInfo, QObject *parent = 0);
     ~TreeNode();
-    void addChild(Node* child);
+    void addChild(TreeNode* child);
 };
 
 class TreeNavigationBar : public QWidget

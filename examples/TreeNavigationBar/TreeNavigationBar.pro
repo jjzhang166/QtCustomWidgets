@@ -13,11 +13,18 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        treenavigationbar.cpp \
     treenavigationbartest.cpp
 
-HEADERS  += treenavigationbar.h \
-    treenavigationbartest.h
+HEADERS  += treenavigationbartest.h
 
 FORMS += \
     treenavigationbartest.ui
+
+CONFIG += release
+MOC_DIR = temp/moc
+RCC_DIR = temp/rcc
+UI_DIR = temp/ui
+OBJECTS_DIR = temp/obj
+DESTDIR = bin
+
+include(../../TreeNavigationBar/TreeNavigationBar.pri)
