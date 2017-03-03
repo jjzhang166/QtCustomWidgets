@@ -103,7 +103,7 @@ private:
     bool m_enableKeyMove;//按键移动
     bool m_fixed;//固定大小
 
-    QMap<int, QPair<QString, QRectF>> m_itemList;
+    QMap<int, QPair<QString, QRectF> > m_itemList;
     int m_totalTextWidth;//文字总长度,resize时重新计算每个Item的RectF
     int m_totalTextHeight;
     int m_currentItemIndex;//当前选中item
