@@ -41,22 +41,41 @@ public:
     TreeNode();
     TreeNode(FoldShape foldShape, const QString& baseInfo, const QString& extraInfo);
     ~TreeNode();
+    void Init();
     void addChild(TreeNode* node);
-    QColor normalColor() const { return m_normalColor; }
-    QColor hoverColor() const { return m_hoverColor; }
-    QColor selectedColor() const { return m_selectedColor; }
+    QColor normalColorBg() const { return m_normalColorBg; }
+    QColor hoverColorBg() const { return m_hoverColorBg; }
+    QColor selectedColorBg() const { return m_selectedColorBg; }
+    QColor normalColorText() const { return m_normalColorText; }
+    QColor hoverColorText() const { return m_hoverColorText; }
+    QColor selectedColorText() const { return m_selectedColorText; }
     FoldShape foldShape() const { return m_foldShape; }
+    QString baseInfo() const { return m_baseInfo; }
+    QString extraInfo() const { return m_extraInfo; }
+    void setFoldShape(FoldShape shape);
+    void setBaseInfo(QString baseInfo);
+    void setExtraInfo(QString extraInfo);
+    void setNormalColorBg(QColor color);
+    void setHoverColorBg(QColor color);
+    void setSelectedColorBg(QColor color);
+    void setNomalColorText(QColor color);
+    void setHoverColorText(QColor color);
+    void setSelectedColorText(QColor color);
 
 private:
     FoldShape m_foldShape;//折叠形状
     QString m_baseInfo;//基础信息
     QString m_extraInfo;//额外信息
 
-    QColor m_normalColor;
-    QColor m_hoverColor;
-    QColor m_selectedColor;
+    QColor m_normalColorBg;
+    QColor m_hoverColorBg;
+    QColor m_selectedColorBg;
+    QColor m_normalColorText;
+    QColor m_hoverColorText;
+    QColor m_selectedColorText;
     int m_level;//当前层级
     QList<TreeNode*> child;//子元素
+
 };
 Q_DECLARE_METATYPE(TreeNode)
 
@@ -68,6 +87,9 @@ public:
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
+
+private:
+    QSize m_size;
 };
 
 
