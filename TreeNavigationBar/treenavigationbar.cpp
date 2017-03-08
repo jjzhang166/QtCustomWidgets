@@ -209,6 +209,39 @@ QSize TreeNodeDelegate::sizeHint(const QStyleOptionViewItem &option,
 }
 
 
+TreeNodeModel::TreeNodeModel(QObject *parent) : QAbstractListModel(parent)
+{
+
+}
+
+TreeNodeModel::~TreeNodeModel()
+{
+    m_nodeList.clear();
+}
+
+int TreeNodeModel::rowCount(const QModelIndex &parent) const
+{
+    return m_nodeList.size();
+}
+
+QVariant TreeNodeModel::data(const QModelIndex &index, int role) const
+{
+    if (!index.isValid()) {
+        return QVariant();
+    }
+
+    if (index.row() >= listNode.size() || index.row() < 0) {
+        return QVariant();
+    }
+
+    if (role == Qt::DisplayRole) {
+        return listNode[index.row()].label;
+    } else if (role == Qt::UserRole) {
+        return (unsigned int)(listNode[index.row()].treeNode);
+    }
+
+    return QVariant();
+}
 
 TreeNavigationBar::TreeNavigationBar(QWidget *parent)
     : QWidget(parent)
@@ -219,5 +252,6 @@ TreeNavigationBar::~TreeNavigationBar()
 {
 
 }
+
 
 

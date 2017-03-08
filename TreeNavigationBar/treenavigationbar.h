@@ -92,7 +92,20 @@ private:
     QSize m_size;
 };
 
+class TreeNodeModel : public QAbstractListModel
+{
+    Q_OBJECT
+public:
+    TreeNodeModel(QObject* parent);
+    ~TreeNodeModel();
 
+protected:
+    int rowCount(const QModelIndex &parent) const;
+    QVariant data(const QModelIndex &index, int role) const;
+
+private:
+    QVector<TreeNode> m_nodeList;
+};
 
 class TreeNavigationBar : public QWidget
 {
